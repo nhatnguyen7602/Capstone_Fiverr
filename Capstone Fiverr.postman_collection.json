@@ -1,0 +1,1262 @@
+{
+	"info": {
+		"_postman_id": "4e8c0159-6e9d-42ba-9be1-583c9278c5de",
+		"name": "Capstone Fiverr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23747005"
+	},
+	"item": [
+		{
+			"name": "Đăng ký",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Nhậttttt\",\r\n    \"email\": \"nhat123@gmail.com\",\r\n    \"pass_word\": \"user123\",\r\n    \"phone\": \"0987654321\",\r\n    \"birth_day\": \"1999-05-20\",\r\n    \"gender\": \"NU\",\r\n    \"role\": \"USER\",\r\n    \"skill\": \"['ĐH', 'CD']\",\r\n    \"certification\": \"['ĐH', 'CD']\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/auth/dang-ky",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"auth",
+						"dang-ky"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Đăng nhập",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"nhat123@gmail.com\",\r\n    \"pass_word\": \"user123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/auth/dang-nhap",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"auth",
+						"dang-nhap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách bình luận",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik5o4bqtdHR0dHQiLCJlbWFpbCI6Im5oYXQxMjNAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDk4NzY1NDMyMSIsImJpcnRoX2RheSI6IjE5OTktMDUtMjAiLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiJbJ8SQSCcsICdDRCddIiwiY2VydGlmaWNhdGlvbiI6IlsnxJBIJywgJ0NEJ10iLCJhdmF0YXIiOm51bGwsImlhdCI6MTY3NDE0NjQ1NiwiZXhwIjoxNjc1MDEwNDU2fQ.MtrZzEc4bfXV52GWuFsPzz_ZQyOeioHbRd3A3HjftYU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/binh-luan",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"binh-luan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm bình luận",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6Ik5o4bqtdCIsImVtYWlsIjoibmhhdDEyQGdtYWlsLmNvbSIsInBhc3Nfd29yZCI6InVzZXIxMjMiLCJwaG9uZSI6IjA5ODc2NTQzMjEiLCJiaXJ0aF9kYXkiOiIxOTk5LTA1LTIwIiwiZ2VuZGVyIjoiTlUiLCJyb2xlIjoiVVNFUiIsInNraWxsIjoiWyfEkEgnLCAnQ0QnXSIsImNlcnRpZmljYXRpb24iOiJbJ8SQSCcsICdDRCddIiwiYXZhdGFyIjpudWxsLCJpYXQiOjE2NzQxNDYwNDksImV4cCI6MTY3NTAxMDA0OX0.cygO-kIA_fxYQharjChvfggbxfMvfL42OpQpuTAX1Q0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ma_cong_viec\":2,\r\n    \"ma_nguoi_binh_luan\": 3,\r\n    \"ngay_binh_luan\": \"2022-11-11\",\r\n    \"noi_dung\": \"Comment 11111111\",\r\n    \"sao_binh_luan\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/binh-luan",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"binh-luan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sửa bình luận",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ma_cong_viec\":2,\r\n    \"ma_nguoi_binh_luan\": 3,\r\n    \"ngay_binh_luan\": \"2022-11-11\",\r\n    \"noi_dung\": \"Sửa comment 1111111111\",\r\n    \"sao_binh_luan\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/binh-luan/6",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"binh-luan",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Xoá bình luận",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/binh-luan/6",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"binh-luan",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách bình luận theo công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/binh-luan/lay-binh-luan-theo-cong-viec/2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"binh-luan",
+						"lay-binh-luan-theo-cong-viec",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách chi tiết loại công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/chi-tiet-loai-cong-viec",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"chi-tiet-loai-cong-viec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm chi tiết loại công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ten_chi_tiet\": \"Test thêm 111\",\r\n    \"ma_loai_cong_viec\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/chi-tiet-loai-cong-viec",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"chi-tiet-loai-cong-viec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy chi tiết loại công việc theo id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/chi-tiet-loai-cong-viec/9",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"chi-tiet-loai-cong-viec",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sửa chi tiết loại công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ten_chi_tiet\": \"Test sửa 9999999\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/chi-tiet-loai-cong-viec/9",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"chi-tiet-loai-cong-viec",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Xoá chi tiết loại công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/chi-tiet-loai-cong-viec/9",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"chi-tiet-loai-cong-viec",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm hình ảnh chi tiết loại công việc theo id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "hinh_anh",
+							"type": "file",
+							"src": "/C:/Users/nhatn/Downloads/hieu-qua-cong-viec.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/chi-tiet-loai-cong-viec/upload-hinh-chi-tiet-loai-cong-viec/3",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"chi-tiet-loai-cong-viec",
+						"upload-hinh-chi-tiet-loai-cong-viec",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/cong-viec",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cong-viec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ten_cong_viec\": \"Thêm công việc 000000\",\r\n    \"danh_gia\": 12,\r\n    \"gia_tien\": 122,\r\n    \"mo_ta\": \"Mô tả\",\r\n    \"mo_ta_ngan\": \"Mô tả ngắn\",\r\n    \"sao_cong_viec\": 4,\r\n    \"ma_chi_tiet_loai\": 1,\r\n    \"nguoi_tao\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/cong-viec",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cong-viec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy công việc theo id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/cong-viec/9",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cong-viec",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sửa công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ten_cong_viec\": \"Sửa công việc9999999\",\r\n    \"danh_gia\": 12,\r\n    \"gia_tien\": 122,\r\n    \"mo_ta\": \"Mô tả\",\r\n    \"mo_ta_ngan\": \"Mô tả ngắn\",\r\n    \"sao_cong_viec\": 4,\r\n    \"ma_chi_tiet_loai\": 1,\r\n    \"nguoi_tao\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/cong-viec/9",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cong-viec",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Xoá công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ten_cong_viec\": \"Sửa công việc\",\r\n    \"danh_gia\": 12,\r\n    \"gia_tien\": 122,\r\n    \"mo_ta\": \"Mô tả\",\r\n    \"mo_ta_ngan\": \"Mô tả ngắn\",\r\n    \"sao_cong_viec\": 4,\r\n    \"ma_chi_tiet_loai\": 1,\r\n    \"nguoi_tao\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/cong-viec/9",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cong-viec",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm hình công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "hinh_anh",
+							"type": "file",
+							"src": "/C:/Users/nhatn/Downloads/hieu-qua-cong-viec.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/cong-viec/upload-hinh-cong-viec/8",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cong-viec",
+						"upload-hinh-cong-viec",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách công việc theo tên",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/cong-viec/lay-ds-cong-viec-theo-ten/viec",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"cong-viec",
+						"lay-ds-cong-viec-theo-ten",
+						"viec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách loại công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/loai-cong-viec",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"loai-cong-viec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm loại công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ten_loai_cong_viec\": \"Tên test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/loai-cong-viec",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"loai-cong-viec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy loại công việc theo id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/loai-cong-viec/4",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"loai-cong-viec",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sửa loại công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tenLoaiCongViec\": \"Test sửa 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/loai-cong-viec/4",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"loai-cong-viec",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Xoá loại công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tenLoaiCongViec\": \"Test sửa 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/loai-cong-viec/4",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"loai-cong-viec",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách người dùng",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/nguoi-dung",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"nguoi-dung"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm người dùng",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Nhật nè\",\r\n    \"email\": \"nhat111111111@gmail.com\",\r\n    \"pass_word\": \"user123\",\r\n    \"phone\": \"0987654321\",\r\n    \"birth_day\": \"1999-05-20\",\r\n    \"gender\": \"NU\",\r\n    \"role\": \"USER\",\r\n    \"skill\": \"['ĐH', 'CD']\",\r\n    \"certification\": \"['ĐH', 'CD']\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/nguoi-dung",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"nguoi-dung"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Xoá người dùng",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/nguoi-dung/7",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"nguoi-dung",
+						"7"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy người dùng theo id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/nguoi-dung/6",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"nguoi-dung",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sửa thông tin người dùng",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test Put2\",\r\n    \"email\": \"nhat1@gmail.com\",\r\n    \"pass_word\": \"user123\",\r\n    \"phone\": \"0987654321\",\r\n    \"birth_day\": \"1999-05-20\",\r\n    \"gender\": \"NU\",\r\n    \"role\": \"USER\",\r\n    \"skill\": \"['ĐH']\",\r\n    \"certification\": \"['ĐH', 'CD']\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/nguoi-dung/6",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"nguoi-dung",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search người dùng theo tên",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/nguoi-dung/search/put",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"nguoi-dung",
+						"search",
+						"put"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload avatar theo token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/nhatn/Downloads/hieu-qua-cong-viec.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/nguoi-dung/upload-avatar",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"nguoi-dung",
+						"upload-avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách thuê công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/thue-cong-viec",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"thue-cong-viec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm thuê công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ma_cong_viec\": 2,\r\n    \"ma_nguoi_thue\": 1,\r\n    \"ngay_thue\": \"2023-01-01\",\r\n    \"hoan_thanh\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/thue-cong-viec",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"thue-cong-viec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy thuê công việc theo id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/thue-cong-viec/4",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"thue-cong-viec",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sửa thuê công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ma_cong_viec\": 2,\r\n    \"ma_nguoi_thue\": 1,\r\n    \"ngay_thue\": \"2023-01-30\",\r\n    \"hoan_thanh\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/thue-cong-viec/3",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"thue-cong-viec",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Xoá thuê công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/thue-cong-viec/4",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"thue-cong-viec",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cập nhật hoàn thành công việc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InVzZXIiLCJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicGFzc193b3JkIjoidXNlcjEyMyIsInBob25lIjoiMDEyMzQ1Njc4OSIsImJpcnRoX2RheSI6IjIwMDItMDYtMDciLCJnZW5kZXIiOiJOVSIsInJvbGUiOiJVU0VSIiwic2tpbGwiOiIiLCJjZXJ0aWZpY2F0aW9uIjoiIiwiaWF0IjoxNjczNDgzNDUxLCJleHAiOjE2NzQzNDc0NTF9.RUJk_DUxkA9IDbk8Q0AKZvf5QWVvSdSQJV7sYZ5tEZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/thue-cong-viec/hoan-thanh-cong-viec/3",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"thue-cong-viec",
+						"hoan-thanh-cong-viec",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
